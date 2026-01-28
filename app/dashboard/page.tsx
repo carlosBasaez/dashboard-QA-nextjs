@@ -1,5 +1,4 @@
 "use client";
-export const dynamic = "force-dynamic";
 
 import DashboardFooter from "@/components/dashboardFooter";
 import Navbar from "@/components/navbar";
@@ -12,8 +11,10 @@ export default function Home() {
     const [user, setUser] = useState<string | null>(null);
 
     useEffect(() => {
-        const storedUser = localStorage.getItem("user_name");
-        setUser(storedUser);
+        if (typeof window !== "undefined") {
+            const storedUser = localStorage.getItem("user");
+            setUser(storedUser);
+        }
     }, []);
     return (
         <div>
