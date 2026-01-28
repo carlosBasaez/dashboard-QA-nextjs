@@ -1,3 +1,5 @@
+"use client";
+
 import DashboardFooter from "@/components/dashboardFooter";
 import Navbar from "@/components/navbar";
 import ProjectGrid from "@/components/projectGrid";
