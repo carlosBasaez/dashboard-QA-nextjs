@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     }
     try {
         console.log("url exitoso")
-        const sql = neon(url)
+        const sql = neon(url!)
         const body = await request.json()
         const login = await sql`SELECT * FROM usuarios WHERE username = ${body.username} AND password = ${body.password};`
         console.log("usuarios obtenidos", login)
