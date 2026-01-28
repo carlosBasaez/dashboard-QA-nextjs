@@ -7,8 +7,8 @@ export async function POST(request: Request) {
     console.log("url obtenido")
     //url para conectarse a la base de datos + validacion si la url viene vacia o undefined
     if (!url) {
+        console.log("DATABASE_URL:", url ? "EXISTE" : "NO EXISTE");
         console.log("DATABASE_URL ES:", url)
-        throw new Error("la variable DATABASE_URL viene vacia o no esta definida en el env")
     }
     try {
         console.log("url exitoso")
