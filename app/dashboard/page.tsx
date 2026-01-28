@@ -11,10 +11,8 @@ export default function Home() {
     const [user, setUser] = useState<string | null>(null);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            const storedUser = localStorage.getItem("user");
-            setUser(storedUser);
-        }
+        const storedUser = window.localStorage.getItem("user_name");
+        setUser(storedUser);
     }, []);
     return (
         <div>
